@@ -4,7 +4,6 @@
     <title>Banjo Tuner</title>
     <link rel="stylesheet" href="styles/tuner.css" charset="utf-8">
     <script src="javascripts/jquery-1.11.2.min.js"></script>
-    <script src="javascripts/buzz.js"></script>
   </head>
 
   <body>
@@ -16,7 +15,7 @@
       <div id="pad5" data-sound="http://0.0.0.0:8080/sawmill_tuning/ditty.wav">g</div>
     </section>
 
-    <select>
+    <select id="options" onchange="updateAttrs()">
       <option value="sawmill">Sawmill</option>
       <option value="meadowlands">Meadowlands</option>
     </select>

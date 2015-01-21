@@ -1,4 +1,4 @@
-alert("ok!"); 
+alert("ok!");
 
   context = new webkitAudioContext();
 
@@ -11,6 +11,7 @@ function loadAudio( object, url) {
 
   request.onload = function() {
     context.decodeAudioData(request.response, function(buffer) {
+      console.log("changing buffer!");
       object.buffer = buffer;
     });
   }
@@ -48,3 +49,24 @@ $(function() {
     this.play();
   });
 });
+
+var sawmillUrls = {
+  bass: "http://0.0.0.0:8080/sawmill_tuning/bass.wav",
+  ditty: "http://0.0.0.0:8080/sawmill_tuning/ditty.wav",
+  hat: "http://0.0.0.0:8080/sawmill_tuning/hat.wav",
+  leg: "http://0.0.0.0:8080/sawmill_tuning/leg.wav",
+  tin: "http://0.0.0.0:8080/sawmill_tuning/tin.wav",
+}
+
+var meadowlandsUrls = {
+  bass: "http://0.0.0.0:8080/meadowlands_tuning/basses.wav",
+  ditty: "http://0.0.0.0:8080/meadowlands_tuning/tins.wav",
+  hat: "http://0.0.0.0:8080/meadowlands_tuning/hats.wav",
+  leg: "http://0.0.0.0:8080/meadowlands_tuning/legs.wav",
+  tin: "http://0.0.0.0:8080/meadowlands_tuning/tins.wav",
+}
+
+function updateAttrs() {
+  loadAudio("pad1", "http://0.0.0.0:8080/meadowlands_tuning/dittys.wav");
+  document.getElementById("pad1").setAttribute("data-sound", "http://0.0.0.0:8080/meadowlands_tuning/dittys.wav");
+}
