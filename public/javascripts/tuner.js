@@ -67,6 +67,22 @@ var meadowlandsUrls = {
 }
 
 function updateAttrs() {
-  loadAudio("pad1", "http://0.0.0.0:8080/meadowlands_tuning/dittys.wav");
-  document.getElementById("pad1").setAttribute("data-sound", "http://0.0.0.0:8080/meadowlands_tuning/dittys.wav");
+
+  var pad1 = document.getElementById("pad1");
+  var pad2 = document.getElementById("pad2");
+  var pad3 = document.getElementById("pad3");
+  var pad4 = document.getElementById("pad4");
+  var pad5 = document.getElementById("pad5");
+
+  loadAudio(pad1, meadowlandsUrls.ditty);
+  loadAudio(pad2, meadowlandsUrls.bass);
+  loadAudio(pad3, meadowlandsUrls.hat);
+  loadAudio(pad4, meadowlandsUrls.leg);
+  loadAudio(pad5, meadowlandsUrls.tin);
+
+  pad1.setAttribute("data-sound", meadowlandsUrls.ditty);
+  pad2.setAttribute("data-sound", meadowlandsUrls.bass);
+  pad3.setAttribute("data-sound", meadowlandsUrls.hat);
+  pad4.setAttribute("data-sound", meadowlandsUrls.leg);
+  pad5.setAttribute("data-sound", meadowlandsUrls.tin);
 }
