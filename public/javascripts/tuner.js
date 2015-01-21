@@ -1,43 +1,34 @@
-//Step 1
-var context;
-function initContext() {
-  try {
-    context = new webkitAudioContext();
-    alert("context created"); //test
-  }
-  catch(e) {
-    alert('Sorry, your browser does not support the Web Audio API.');
-  }
-}
+alert("ok!"); 
 
-//Step 2
-var myAudioBuffer = null;
+  context = new webkitAudioContext();
 
-//Steps 3 and 4
-var url = "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/08/1407409274kick.wav";
-function loadSound(url) {
+
+function loadAudio( object, url) {
+
   var request = new XMLHttpRequest();
   request.open('GET', url, true);
   request.responseType = 'arraybuffer';
-  // . . . step 3 code above this line, step 4 code below
+
   request.onload = function() {
-    alert("sound loaded"); //test
     context.decodeAudioData(request.response, function(buffer) {
-      myAudioBuffer = buffer;
-      alert("sound decoded"); //test
+      object.buffer = buffer;
     });
   }
   request.send();
 }
 
 //Step 5
-var source = null;
-function playSound(anybuffer) {
-  source = context.createBufferSource();
-  source.buffer = anybuffer;
-  source.connect(context.destination);
-  source.start();
-  //source.noteOn(0); //see note in Step 6 text
+function addAudioProperties(object) {
+  object.name = object.id;
+  object.source = $(object).data('sound');
+  loadAudio(object, object.source);
+  object.play = function () {
+    var s = context.createBufferSource();
+    s.buffer = object.buffer;
+    s.connect(context.destination);
+    s.start(0);
+    object.s = s;
+  }
 }
 
 //Step 6
@@ -48,5 +39,12 @@ function stopSound() {
   }
 }
 
-initContext();
-loadSound("http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/08/1407409274kick.wav");
+$(function() {
+  $('#sp div').each(function() {
+    addAudioProperties(this);
+  });
+
+  $('#sp div').click(function() {
+    this.play();
+  });
+});

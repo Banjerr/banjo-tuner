@@ -2,19 +2,21 @@
 
   <head>
     <title>Banjo Tuner</title>
-    <link rel="stylesheet" href="../public/styles/tuner.css" charset="utf-8">
+    <link rel="stylesheet" href="styles/tuner.css" charset="utf-8">
+    <script src="javascripts/jquery-1.11.2.min.js"></script>
+    <script src="javascripts/buzz.js"></script>
   </head>
 
   <body>
     <section id="sp">
 
-      <div id="pad1" onclick="playSound(myAudioBuffer)">D</div>
-      <div id="pad2" data-sound="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/08/1407409274kick.wav">B</div>
-      <div id="pad3" data-sound="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/08/1407409274kick.wav">G</div>
-      <div id="pad4" data-sound="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/08/1407409274kick.wav">D</div>
-      <div id="pad5" data-sound="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/08/1407409274kick.wav">G</div>
+      <div id="pad1" data-sound="http://0.0.0.0:8080/sawmill_tuning/tin.wav">G</div>
+      <div id="pad2" data-sound="http://0.0.0.0:8080/sawmill_tuning/leg.wav">D</div>
+      <div id="pad3" data-sound="http://0.0.0.0:8080/sawmill_tuning/hat.wav">G</div>
+      <div id="pad4" data-sound="http://0.0.0.0:8080/sawmill_tuning/bass.wav">D</div>
+      <div id="pad5" data-sound="http://0.0.0.0:8080/sawmill_tuning/ditty.wav">g</div>
     </section>
 
-  <script src="../public/javascripts/tuner.js" charset="utf-8"></script>
+  <script src="javascripts/tuner.js" charset="utf-8"></script>
   </body>
 </html>
