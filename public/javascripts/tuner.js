@@ -8,11 +8,11 @@
       ditty: "sawmill_tuning/ditty.wav",
     },
     meadowlands: {
-      tin: "meadowlands_tuning/tins.wav",
-      leg: "meadowlands_tuning/legs.wav",
-      hat: "meadowlands_tuning/hats.wav",
-      bass: "meadowlands_tuning/basses.wav",
-      ditty: "meadowlands_tuning/tins.wav",
+      tin: "meadowlands_tuning/basses.wav",
+      leg: "meadowlands_tuning/dittys.wav",
+      hat: "meadowlands_tuning/legs.wav",
+      bass: "meadowlands_tuning/tins.wav",
+      ditty: "meadowlands_tuning/hats.wav",
     }
   }
 
@@ -49,12 +49,22 @@
     });
   }
 
-  $('#options').on('change', function() {
+  $('body').on('change', '#options', function() {
     var set = $(this).val();
     loadSet(sets[set])
   })
 
-  $('#sp div').click(function() {
+  $('body').on('change', '#options', function(){
+    if($('#options').val() === 'meadowlands'){
+      $('#pad1').text('d');
+      $('#pad2').text('C');
+      $('#pad3').text('G');
+      $('#pad4').text('C');
+      $('#pad5').text('g');
+    };
+  })
+
+  $('body').on('click', '#sp div', function() {
     if(this.buffer) {
       this.play();
     }

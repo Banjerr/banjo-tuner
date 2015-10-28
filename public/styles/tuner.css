@@ -1,11 +1,25 @@
-#sp { width: 10em; height: 25em; margin: 0; padding: 2em; float: left; }
+#sp { width: 10em; height: 25em; margin: 0; padding: 2em; float: left; transition: all .2s ease-out;}
 #sp div {
-  width: 10em;
-  height: 1em;
-  margin-bottom: 1em;
-  display: inline-block;
-  background: #fca13f;
-  box-shadow: rgba(0, 0, 0, 0.0980392) -6px 6px 0px 0px inset;
+    width: 10em;
+    height: auto;
+    margin: 0 auto 8%;
+    display: inline-block;
+    background: #fca13f;
+    box-shadow: rgba(0, 0, 0, 0.0980392) -6px 6px 0px 0px inset;
+    padding: 2% 0;
+    transition: all .2s ease-out;
+    cursor: pointer;
+}
+#sp div:hover {
+  box-shadow:0 0 12px #000;
+  color:#fca13f;
+  background-color:#fff;
 }
 #sp div:nth-child(odd) { margin-right: 1em; }
 #sp div:active { background: #248aaf; }
+
+.tunerConrols {
+    max-width: 215px;
+    margin: 0 auto;
+    text-align: center;
+}
