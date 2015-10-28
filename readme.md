@@ -4,4 +4,4 @@ pretty cool stuff. new tunings/stylings on the way soon (hopefully)
 
 ## Demo (sorta)
 
-![](https://dl.dropboxusercontent.com/s/uc9royo6ixpz39q/84004233-FF3E-4A13-A574-C9B7599E8DE2-22028-00001DDA40571203.gif?dl=0)
+![](https://dl.dropboxusercontent.com/s/gt79x9vs45ckddq/D4975C00-6E38-4EF8-92B7-6B7D8B4A10C1-22028-00002741722174E8.gif?dl=0)
